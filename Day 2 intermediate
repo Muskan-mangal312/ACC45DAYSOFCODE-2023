@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int L, V1, V2;
+        cin >> L >> V1 >> V2; // Length of racetrack, tortoise's speed, and hare's speed
+
+        // Calculate time taken by tortoise and hare (rounding up)
+        int tortoise_time = (L + V1 - 1) / V1;
+        int hare_time = (L + V2 - 1) / V2;
+
+        // Check if hare can win (hare's time is strictly less than tortoise's time)
+        if (hare_time < tortoise_time) {
+            cout << 0 << endl; // The hare can start immediately and still win
+        } else {
+            cout << -1 << endl; // The hare cannot win no matter what
+        }
+    }
+
+    return 0;
+}
