@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int N;
+        cin >> N; // Number of hoops
+
+        // The last hoop that will be jumped into is the middle hoop (N+1)/2
+        cout << (N + 1) / 2 << endl;
+    }
+
+    return 0;
+}
