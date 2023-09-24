@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int X, Y;
+        cin >> X >> Y; // Following count and follower count
+
+        // Check if the following count is more than 10 times the follower count
+        if (X > 10 * Y) {
+            cout << "YES" << endl; // It's a spam account
+        } else {
+            cout << "NO" << endl; // It's not a spam account
+        }
+    }
+
+    return 0;
+}
