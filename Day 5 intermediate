@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int PA, PB, PC;
+        cin >> PA >> PB >> PC; // People in regions A, B, and C
+
+        // Calculate the maximum number of people the mayor can invite
+        int max_people = min(PA, PC) + PB; // Invite from A or C, plus all from B
+
+        cout << max_people << endl;
+    }
+
+    return 0;
+}
