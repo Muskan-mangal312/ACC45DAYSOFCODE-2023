@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int N, B;
+        cin >> N >> B; // Number of tablets and budget
+
+        int max_area = 0; // Initialize maximum area to 0
+
+        for (int i = 0; i < N; i++) {
+            int W, H, P;
+            cin >> W >> H >> P; // Width, height, and price of the tablet
+
+            // Calculate the area of the tablet's screen
+            int area = W * H;
+
+            // Check if the tablet is within budget and has a larger screen area
+            if (P <= B && area > max_area) {
+                max_area = area;
+            }
+        }
+
+        if (max_area == 0) {
+            cout << "no tablet" << endl;
+        } else {
+            cout << max_area << endl;
+        }
+    }
+
+    return 0;
+}
