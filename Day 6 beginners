@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int X, Y;
+        cin >> X >> Y; // Capacity of the geyser and the bucket
+
+        // Calculate the maximum number of people who can take a bath
+        int max_people = X / (2 * Y);
+
+        cout << max_people << endl;
+    }
+
+    return 0;
+}
