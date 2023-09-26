@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        long long X, Y; // Using long long for large numbers
+        cin >> X >> Y; // Cost of renting and cost of purchasing
+
+        // Calculate the maximum number of months for which Chef can rent the cooler
+        // such that renting cost is strictly less than purchasing cost
+        long long max_months = (Y - 1) / X;
+
+        cout << max_months << endl;
+    }
+
+    return 0;
+}
