@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int A[5], P;
+        for (int i = 0; i < 5; i++) {
+            cin >> A[i];
+        }
+        cin >> P;
+
+        // Calculate the total hours of work required for the week
+        int total_hours = 0;
+        for (int i = 0; i < 5; i++) {
+            total_hours += A[i];
+        }
+
+        // Calculate the total hours of work Chef can do in a week including weekends
+        int total_possible_hours = 24 * 7;
+
+        if (total_hours * P <= total_possible_hours) {
+            cout << "No" << endl;
+        } else {
+            cout << "Yes" << endl;
+        }
+    }
+
+    return 0;
+}
