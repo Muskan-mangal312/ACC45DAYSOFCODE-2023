@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int X, Y;
+        cin >> X >> Y; // Amount Chef has and cost of one chocolate
+
+        int max_chocolates = X / Y;
+        cout << max_chocolates << endl;
+    }
+
+    return 0;
+}
