@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int A, B;
+        cin >> A >> B; // Input values
+
+        int limak_total = 0;
+        int bob_total = 0;
+        int candies = 1;
+        
+        // Simulate the game and calculate total candies eaten by Limak and Bob
+        while (true) {
+            if (candies % 2 == 1) {
+                limak_total += candies;
+                if (limak_total > A) {
+                    cout << "Bob" << endl;
+                    break;
+                }
+            } else {
+                bob_total += candies;
+                if (bob_total > B) {
+                    cout << "Limak" << endl;
+                    break;
+                }
+            }
+            candies++;
+        }
+    }
+
+    return 0;
+}
