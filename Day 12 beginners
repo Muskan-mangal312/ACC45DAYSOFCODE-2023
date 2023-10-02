@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int X, Y;
+        cin >> X >> Y; // Input X and Y
+
+        int moves = (X + Y - 1) / Y; // Calculate minimum moves required
+        cout << moves << endl;
+    }
+
+    return 0;
+}
