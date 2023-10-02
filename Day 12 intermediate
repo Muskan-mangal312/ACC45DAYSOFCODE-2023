@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int X, Y, Z;
+        cin >> X >> Y >> Z; // Input X, Y, and Z
+
+        // Check if conditions can be satisfied
+        if (X + Y >= Z && Y + Z >= X && Z + X >= Y) {
+            cout << "yes" << endl;
+        } else {
+            cout << "no" << endl;
+        }
+    }
+
+    return 0;
+}
