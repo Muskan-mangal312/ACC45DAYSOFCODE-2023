@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int N;
+        cin >> N; // Total number of chocolates
+
+        // Distribution of chocolates
+        if (N % 2 == 0) {
+            // If N is even, distribute 2 chocolates to the first jar, 1 to the second jar, and the rest to the third jar
+            cout << 2 << " " << 1 << " " << N - 3 << endl;
+        } else {
+            // If N is odd, distribute 1 chocolate to the first jar, 1 to the second jar, and the rest to the third jar
+            cout << 1 << " " << 1 << " " << N - 2 << endl;
+        }
+    }
+
+    return 0;
+}
