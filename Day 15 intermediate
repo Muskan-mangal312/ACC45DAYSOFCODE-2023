@@ -1,0 +1,54 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int N;
+        cin >> N; // Number of days
+
+        vector<int> om(N), addy(N);
+        for (int i = 0; i < N; ++i) {
+            cin >> om[i]; // Problems solved by Om on ith day
+        }
+
+        for (int i = 0; i < N; ++i) {
+            cin >> addy[i]; // Problems solved by Addy on ith day
+        }
+
+        int om_streak = 0, addy_streak = 0;
+        int max_om_streak = 0, max_addy_streak = 0;
+
+        for (int i = 0; i < N; ++i) {
+            if (om[i] > 0) {
+                om_streak++;
+            } else {
+                max_om_streak = max(max_om_streak, om_streak);
+                om_streak = 0;
+            }
+
+            if (addy[i] > 0) {
+                addy_streak++;
+            } else {
+                max_addy_streak = max(max_addy_streak, addy_streak);
+                addy_streak = 0;
+            }
+        }
+
+        max_om_streak = max(max_om_streak, om_streak);
+        max_addy_streak = max(max_addy_streak, addy_streak);
+
+        if (max_om_streak > max_addy_streak) {
+            cout << "OM" << endl;
+        } else if (max_om_streak < max_addy_streak) {
+            cout << "ADDY" << endl;
+        } else {
+            cout << "DRAW" << endl;
+        }
+    }
+
+    return 0;
+}
