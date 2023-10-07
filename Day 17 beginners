@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int x, y;
+        cin >> x >> y; // Initial and final volume
+
+        // Calculate the absolute difference between x and y
+        int diff = abs(y - x);
+
+        // Calculate the minimum number of button presses required
+        int minPresses = diff / 5; // Each button press changes volume by 5
+        if (diff % 5 != 0) {
+            minPresses++; // If there is a remainder, one additional press is needed
+        }
+
+        cout << minPresses << endl;
+    }
+
+    return 0;
+}
