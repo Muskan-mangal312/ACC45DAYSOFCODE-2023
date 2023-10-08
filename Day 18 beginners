@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int w, x, y, z;
+        cin >> w >> x >> y >> z; // Initial amount, deposit per month, deduction per month, number of months
+
+        int finalBalance = w + x * z - y * z;
+        cout << finalBalance << endl;
+    }
+
+    return 0;
+}
