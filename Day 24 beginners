@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int x;
+        cin >> x; // Marks received by Chef
+
+        // If marks are 0, Chef didn't mark any problem incorrect
+        if (x == 0) {
+            cout << 0 << endl;
+        }
+        // If marks are a multiple of 3, Chef marked no problem incorrect
+        else if (x % 3 == 0) {
+            cout << 0 << endl;
+        }
+        // If marks are 1, Chef marked 2 problems incorrect (1 correct, 2 incorrect)
+        else if (x == 1) {
+            cout << 2 << endl;
+        }
+        // If marks are 2, Chef marked 1 problem incorrect (1 correct, 1 incorrect)
+        else if (x == 2) {
+            cout << 1 << endl;
+        }
+        // If marks are not a multiple of 3, Chef marked 1 problem incorrect
+        else {
+            cout << 1 << endl;
+        }
+    }
+
+    return 0;
+}
