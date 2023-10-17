@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int c, x, y;
+        cin >> c >> x >> y; // Number of chocolates to gift, chocolates Chef has, cost of each chocolate
+
+        // Calculate the number of additional chocolates Chef needs to buy
+        int additional_chocolates = max(0, c - x);
+        
+        // Calculate the minimum money Chef needs to spend
+        int min_money = additional_chocolates * y;
+
+        cout << min_money << endl;
+    }
+
+    return 0;
+}
