@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int x, y;
+        cin >> x >> y; // Number of plates Chef prepared and plates each person takes
+
+        int maxNeighbors = x / y; // Calculate the maximum number of neighbors Chef can feed completely
+        cout << maxNeighbors << endl;
+    }
+
+    return 0;
+}
