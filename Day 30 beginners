@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int r1, w1, c1, r2, w2, c2;
+        cin >> r1 >> w1 >> c1 >> r2 >> w2 >> c2; // Season statistics for players A and B
+
+        int countA = 0, countB = 0;
+
+        // Check who is better in each statistic
+        if (r1 > r2) countA++;
+        else countB++;
+
+        if (w1 > w2) countA++;
+        else countB++;
+
+        if (c1 > c2) countA++;
+        else countB++;
+
+        // Determine the better player
+        if (countA > countB) {
+            cout << "A" << endl;
+        } else {
+            cout << "B" << endl;
+        }
+    }
+
+    return 0;
+}
