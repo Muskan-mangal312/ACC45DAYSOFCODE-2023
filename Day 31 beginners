@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int s, x, y, z;
+        cin >> s >> x >> y >> z; // Total memory, memory occupied by existing apps, memory required by the new app
+
+        int availableMemory = s - x - y; // Calculate available memory after considering existing apps
+        int appsToDelete = 0;
+
+        // If available memory is less than required for the new app, calculate apps to delete
+        if (availableMemory < z) {
+            appsToDelete = z - availableMemory;
+        }
+
+        cout << appsToDelete << endl;
+    }
+
+    return 0;
+}
