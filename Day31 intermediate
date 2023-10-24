@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int n;
+        cin >> n; // Size of the sequence
+        vector<int> arr(n);
+
+        // Input elements of the sequence
+        for (int i = 0; i < n; ++i) {
+            cin >> arr[i];
+        }
+
+        int moves = 0;
+        // Calculate minimum moves needed to make all elements equal
+        for (int i = 1; i < n; ++i) {
+            moves += abs(arr[i] - arr[i - 1]) - 1;
+        }
+
+        cout << moves << endl;
+    }
+
+    return 0;
+}
