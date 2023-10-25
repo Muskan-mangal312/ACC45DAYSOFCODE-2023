@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int n;
+        cin >> n; // Desired number of cuts
+
+        // Check if the number of cuts is divisible by 2
+        // If it is divisible by 2, Chef can always divide the pizza into N pieces using any number of cuts
+        if (n % 2 == 0) {
+            cout << "YES" << endl;
+        } else {
+            cout << "NO" << endl;
+        }
+    }
+
+    return 0;
+}
