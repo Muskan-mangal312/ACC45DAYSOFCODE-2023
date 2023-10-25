@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int l, r, m;
+        cin >> l >> r >> m; // Chef's writing speed, coding speed, and number of minutes
+
+        int minPages = m / l; // Minimum completed pages without coding
+        int maxPages = m / l + 1; // Maximum completed pages without coding
+        int minCodeLines = 0;
+        int maxCodeLines = 0;
+
+        // Find the number of code lines Chef can complete within the given time
+        for (int i = minPages; i <= maxPages; ++i) {
+            int remainingTime = m - (i * l);
+            if (remainingTime >= 0 && remainingTime <= r) {
+                minCodeLines = remainingTime;
+                maxCodeLines = remainingTime;
+                break;
+            }
+        }
+
+        // Calculate Chef's satisfaction
+        int minSatisfaction = minPages + minCodeLines;
+        int maxSatisfaction = maxPages + maxCodeLines;
+
+        // Output Chef's satisfaction
+        cout << minSatisfaction << " " << maxSatisfaction << endl;
+    }
+
+    return 0;
+}
