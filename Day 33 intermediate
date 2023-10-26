@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int N, A, B;
+        cin >> N >> A >> B;
+
+        // Calculate total time given to both clocks
+        int totalTime = 2 * (180 + N);
+
+        // Calculate total time left at the end
+        int totalLeft = A + B;
+
+        // Calculate duration of the game
+        int duration = totalTime - totalLeft;
+
+        cout << duration << endl;
+    }
+
+    return 0;
+}
