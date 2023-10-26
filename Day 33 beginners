@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int exportsA, importsA, exportsB, importsB;
+        cin >> exportsA >> importsA >> exportsB >> importsB;
+
+        int netExportsA = exportsA - importsA;
+        int netExportsB = exportsB - importsB;
+        int combinedNetExports = netExportsA + netExportsB;
+
+        // Determine if country C is in trade surplus
+        if (combinedNetExports > 0) {
+            cout << "YES" << endl;
+        } else {
+            cout << "NO" << endl;
+        }
+    }
+
+    return 0;
+}
