@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+
+    while (t--) {
+        int X;
+        cin >> X; // Amount to be paid
+
+        int coins10 = X / 10; // Number of 10-rupee coins
+        int coins5 = (X % 10) / 5; // Number of 5-rupee coins
+
+        int totalCoins = coins10 + coins5;
+
+        if (X % 5 != 0) {
+            cout << -1 << endl; // Impossible to pay X rupees
+        } else {
+            cout << totalCoins << endl; // Minimum number of coins needed
+        }
+    }
+
+    return 0;
+}
