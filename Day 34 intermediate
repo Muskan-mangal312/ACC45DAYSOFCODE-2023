@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+    
+    while (T--) {
+        string crayons;
+        cin >> crayons; // Input crayons configuration
+        
+        int flips = 0;
+        char prevCrayon = crayons[0];
+        
+        // Count the number of flips required
+        for (int i = 1; i < crayons.length(); ++i) {
+            if (crayons[i] != prevCrayon) {
+                flips++;
+                prevCrayon = crayons[i];
+            }
+        }
+        
+        cout << flips << endl; // Output the minimum number of flips
+    }
+
+    return 0;
+}
