@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+    
+    // Loop through each test case
+    while (T--) {
+        int N;
+        cin >> N; // Number of spooky days
+        
+        // Calculate the number of Tuesdays in N days
+        // (Every 7 days, a new cycle starts and Tuesday occurs)
+        int tuesdays = (N / 7) * 2;
+        
+        // Check the remaining days
+        int remaining_days = N % 7;
+        if (remaining_days >= 2) {
+            tuesdays += min(2, remaining_days);
+        }
+        
+        cout << tuesdays << endl; // Output the result
+    }
+    
+    return 0;
+}
