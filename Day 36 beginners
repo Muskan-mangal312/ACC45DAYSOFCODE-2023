@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+    
+    while (T--) {
+        int P, Q;
+        cin >> P >> Q; // Score of Alice and Bob
+        
+        int total_points = P + Q;
+        int serves = (total_points / 4) * 2;
+        
+        if (total_points % 4 >= 1) {
+            serves++;
+        }
+        
+        if (serves % 2 == 1) {
+            cout << "Alice" << endl;
+        } else {
+            cout << "Bob" << endl;
+        }
+    }
+
+    return 0;
+}
