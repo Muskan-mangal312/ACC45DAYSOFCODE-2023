@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+    
+    while (T--) {
+        int N, K;
+        cin >> N >> K; // Length of the track and maximum distance he can run
+        
+        vector<int> girls(N);
+        for (int i = 0; i < N; ++i) {
+            cin >> girls[i]; // Number of girls within each kilometre
+        }
+        
+        int maxGirls = 0;
+        int currentGirls = 0;
+        
+        // Calculate initial sum of girls for the first K kilometres
+        for (int i = 0; i < K; ++i) {
+            currentGirls += girls[i];
+        }
+        
+        maxGirls = currentGirls;
+        
+        // Calculate sum of girls for the remaining kilometres and find the maximum
+        for (int i = K; i < N; ++i) {
+            currentGirls += girls[i] - girls[i - K];
+            maxGirls = max(maxGirls, currentGirls);
+        }
+        
+        cout << maxGirls << endl;
+    }
+
+    return 0;
+}
