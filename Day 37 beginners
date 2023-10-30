@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+    
+    while (T--) {
+        int N, M;
+        cin >> N >> M; // Cost of ordering online and eating at the restaurant
+        
+        // Calculate final prices considering the discount
+        int onlinePrice = N - (N * 10 / 100);
+        int diningPrice = M;
+        
+        // Determine the cheaper option
+        if (onlinePrice < diningPrice) {
+            cout << "ONLINE" << endl;
+        } else if (onlinePrice > diningPrice) {
+            cout << "DINING" << endl;
+        } else {
+            cout << "EITHER" << endl;
+        }
+    }
+
+    return 0;
+}
