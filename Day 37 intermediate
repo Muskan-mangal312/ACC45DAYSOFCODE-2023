@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    int T;
+    std::cin >> T; // Number of test cases
+    
+    while (T--) {
+        int N, K;
+        std::cin >> N; // Number of songs
+        std::vector<int> A(N); // Song lengths
+        
+        // Read song lengths
+        for (int i = 0; i < N; ++i) {
+            std::cin >> A[i];
+        }
+        
+        std::cin >> K; // Position of Uncle Johny
+        
+        int uncleJohnyLength = A[K - 1]; // Length of Uncle Johny's song in the sorted playlist
+        
+        // Sort the array
+        std::sort(A.begin(), A.end());
+        
+        // Find Uncle Johny's position in the original playlist
+        int uncleJohnyPosition = 1;
+        for (int i = 0; i < N; ++i) {
+            if (A[i] == uncleJohnyLength) {
+                uncleJohnyPosition = i + 1;
+                break;
+            }
+        }
+        
+        std::cout << uncleJohnyPosition << std::endl;
+    }
+
+    return 0;
+}
