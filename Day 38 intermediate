@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    int T;
+    std::cin >> T; // Read the number of test cases
+
+    while (T--) {
+        int N, A, B;
+        std::cin >> N >> A >> B; // Read N, A, and B
+        std::string S;
+        std::cin >> S; // Read the binary string S
+
+        int interDistrictCount = 0;
+        int interStateCount = 0;
+
+        // Count the number of inter-district and inter-state e-passes needed
+        for (char c : S) {
+            if (c == '0') {
+                interDistrictCount++;
+            } else {
+                interStateCount++;
+            }
+        }
+
+        // Calculate the total time Chef has to spend filling the forms
+        int totalTime = (interDistrictCount * A) + (interStateCount * B);
+        
+        std::cout << totalTime << std::endl; // Output the total time
+    }
+
+    return 0;
+}
