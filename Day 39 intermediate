@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    int T;
+    std::cin >> T; // Read the number of test cases
+
+    while (T--) {
+        int N;
+        std::cin >> N; // Read the number of submissions
+
+        std::vector<int> maxScores(11, 0); // Initialize an array to store maximum scores
+
+        for (int i = 0; i < N; ++i) {
+            int problem, score;
+            std::cin >> problem >> score; // Read problem number and score
+
+            // Update the maximum score for the corresponding problem
+            maxScores[problem] = std::max(maxScores[problem], score);
+        }
+
+        // Calculate the total score by summing up the maximum scores
+        int totalScore = std::accumulate(maxScores.begin(), maxScores.end(), 0);
+
+        std::cout << totalScore << std::endl; // Output the total score
+    }
+
+    return 0;
+}
