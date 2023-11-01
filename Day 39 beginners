@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int T;
+    std::cin >> T; // Read the number of test cases
+
+    while (T--) {
+        int N, M;
+        std::cin >> N >> M; // Read N and M
+
+        // Calculate the minimum number of extra shoes required
+        int extraShoes = std::abs(N - M);
+        std::cout << extraShoes << std::endl; // Output the result
+    }
+
+    return 0;
+}
