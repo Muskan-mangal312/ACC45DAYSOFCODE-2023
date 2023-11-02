@@ -1,0 +1,20 @@
+#include <iostream>
+
+int main() {
+    int T;
+    std::cin >> T; // Read the number of test cases
+
+    while (T--) {
+        long long x1, x2;
+        std::cin >> x1 >> x2; // Read initial positions of Chef and his friend
+
+        // Check if Chef and his friend will meet
+        if (x1 == x2 || (x1 < x2 && (x2 - x1) % 3 == 0) || (x1 > x2 && (x1 - x2) % 3 == 0)) {
+            std::cout << "YES\n"; // Output YES if they will meet
+        } else {
+            std::cout << "NO\n"; // Output NO if they won't meet
+        }
+    }
+
+    return 0;
+}
