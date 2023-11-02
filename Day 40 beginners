@@ -1,0 +1,20 @@
+#include <iostream>
+
+int main() {
+    int T;
+    std::cin >> T; // Read the number of testcases
+
+    while (T--) {
+        int X, Y, D;
+        std::cin >> X >> Y >> D; // Read input values
+
+        // Check if the absolute difference between skill levels is less than or equal to D
+        if (std::abs(X - Y) <= D) {
+            std::cout << "YES\n"; // Output YES if interesting
+        } else {
+            std::cout << "NO\n"; // Output NO if not interesting
+        }
+    }
+
+    return 0;
+}
