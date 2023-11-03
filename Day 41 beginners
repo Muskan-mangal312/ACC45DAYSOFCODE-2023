@@ -1,0 +1,26 @@
+#include <iostream>
+
+int main() {
+    int T;
+    std::cin >> T; // Read the number of test cases
+
+    while (T--) {
+        int A, B;
+        std::cin >> A >> B; // Read amounts offered by both investors
+
+        // Calculate valuations based on the given percentages
+        int valuationA = A * 10;
+        int valuationB = B * 5;
+
+        // Determine which offer Devendra should accept
+        if (valuationA > valuationB) {
+            std::cout << "FIRST\n"; // Output FIRST if first investor's offer is better
+        } else if (valuationA < valuationB) {
+            std::cout << "SECOND\n"; // Output SECOND if second investor's offer is better
+        } else {
+            std::cout << "ANY\n"; // Output ANY if both offers are equally good
+        }
+    }
+
+    return 0;
+}
