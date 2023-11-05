@@ -1,1 +1,26 @@
-d
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int PA, PB, QA, QB;
+        cin >> PA >> PB >> QA >> QB; // Time penalties for participants P and Q
+
+        int minPenaltyP = min(PA, PB); // Minimum penalty for participant P
+        int minPenaltyQ = min(QA, QB); // Minimum penalty for participant Q
+
+        if (minPenaltyP < minPenaltyQ) {
+            cout << "P" << endl; // Participant P has a better rank
+        } else if (minPenaltyQ < minPenaltyP) {
+            cout << "Q" << endl; // Participant Q has a better rank
+        } else {
+            cout << "TIE" << endl; // It's a tie
+        }
+    }
+
+    return 0;
+}
+
